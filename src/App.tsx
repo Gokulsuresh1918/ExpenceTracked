@@ -8,7 +8,7 @@ function App() {
   const [selectedCategory, setSelectedCategory] = useState("");
 
   const [expence, setexpence] = useState([
-    { id: 1, description: "aaa", amount: 10, category: "utility" },
+    { id: 1, description: "Demo", amount: 10, category: "utility" },
 
   ]);
   const visible = selectedCategory
