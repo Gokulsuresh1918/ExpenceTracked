@@ -3,7 +3,6 @@ import "./App.css";
 import ExpenseList from "./ExpenseCalculator/components/ExpenseList";
 import ExpenceFilter from "./ExpenseCalculator/components/ExpenceFilter";
 import ExpenceForm from "./ExpenseCalculator/components/ExpenceForm";
-import category from "./ExpenseCalculator/categories";
 
 function App() {
   const [selectedCategory, setSelectedCategory] = useState("");
