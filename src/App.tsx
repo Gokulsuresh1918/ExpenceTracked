@@ -3,24 +3,25 @@ import "./App.css";
 import ExpenseList from "./ExpenseCalculator/components/ExpenseList";
 import ExpenceFilter from "./ExpenseCalculator/components/ExpenceFilter";
 import ExpenceForm from "./ExpenseCalculator/components/ExpenceForm";
-
- export const category = ["Grocery", "utility", "entertainment"] as const
+import category from "./ExpenseCalculator/categories";
 
 function App() {
   const [selectedCategory, setSelectedCategory] = useState("");
 
   const [expence, setexpence] = useState([
     { id: 1, description: "aaa", amount: 10, category: "utility" },
-    { id: 2, description: "bbb", amount: 10, category: "utility" },
-    { id: 3, description: "ccc", amount: 10, category: "utility" },
-    { id: 4, description: "ddd", amount: 10, category: "utility" },
+
   ]);
   const visible = selectedCategory
     ? expence.filter((e) => e.category === selectedCategory)
     : expence;
   return (
     <>
-    <ExpenceForm/>
+      <ExpenceForm
+        onSubmit={newexpence =>
+          setexpence([...expence, { ...newexpence, id: expence.length + 1 }])
+        }
+      />
       <div className="mb-3 ">
         <ExpenceFilter
           Selection={(category) => setSelectedCategory(category)}
